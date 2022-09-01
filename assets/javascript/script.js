@@ -25,3 +25,29 @@ for (i = 9; i <= 17; i++) {
         
 };
 
+function trackTime(){
+    var currentHour = moment().hour(); //military time 
+    var timeBlockArray = $(".time-block");
+
+    
+   for (let x = 0; x < timeBlockArray.length; x++) {
+    const textareaEl = timeBlockArray[x].children[1];
+    var currentBlockTime = timeBlockArray[x].getAttribute("id")
+
+
+    var standardTime = parseInt(currentBlockTime.replace(/\D/g, '' ))
+        if (standardTime < 9) {
+            standardTime += 12
+       }
+       if (standardTime < currentHour){
+        textareaEl.classList.add("past");
+       }
+       if (standardTime === currentHour){
+        textareaEl.classList.add("present");
+       }
+       if (standardTime > currentHour){
+        textareaEl.classList.add("future");
+       }
+   }
+}
+trackTime();
