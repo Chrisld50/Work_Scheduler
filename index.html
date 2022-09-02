@@ -18,22 +18,22 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" /> <!-- above applies the fonts, bootstrap and fontawesome utilized in the scheduler. They go before my css so they can load in first-->
     <title>Work Day Scheduler</title>
   </head>
-
+  <!-- Bootstrap was applied to the css.-->
   <body>
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
+      <p id="currentDay" class="lead"></p>   <!-- the p id of currentDay is where the current day shows up on the page. -->
     </header>
     <div class="container">
-      <div id="9am" class="row time-block">
+      <div id="9am" class="row time-block">   <!-- Row implements the grid system for Bootstrap, and further down you see col-md  which indicates a medium column. Utilizing the ids to be called later in javascript. -->
         <div class="col-md-1 hour">
         9:00 am
         </div>
-        <textarea class="description col-md-10"></textarea>
+        <textarea class="description col-md-10"></textarea> 
         <button class="saveBtn col-md-1"><i class="fas fa-save"></i></button>
       </div>
       <div id="10am" class="row time-block">
@@ -94,7 +94,7 @@
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> <!-- Here is where jquery and moment scripts go. The scripts go before the script.js so they can load in before. -->
     <script src="./assets/javascript/script.js"></script>
   </body>
 </html>
