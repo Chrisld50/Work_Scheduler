@@ -14,13 +14,17 @@ for (i = 9; i <= 17; i++) {  //here is where we get the stored items from the sa
     if (i < 12) {
          data = localStorage.getItem(i + "am")
          $("#" + i + "am").children().eq(1).append(data)
-    } else if (i === 12){
+    }
+     if (i === 12){
         data = localStorage.getItem(i + "pm")
         $("#" + i + "pm").children().eq(1).append(data)
     }
-    else { 
-         data = localStorage.getItem((i - 12) + "pm")
-         $("#" + i + "pm").children().eq(1).append(data)
+    if (i > 12) {   
+        var key = i - 12
+        var itemEl = JSON.stringify(key) + "pm"
+        data = localStorage.getItem(itemEl)
+        $("#" + key + "pm").children().eq(1).append(data)
+
     }
         
 };
